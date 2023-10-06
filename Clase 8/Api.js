@@ -16,6 +16,7 @@ export class Api{
 
     enrutarPeticiones = () =>{
         this.app.use('/', rutasAPI)
+        this.app.use(express.json())
 
     }
 
