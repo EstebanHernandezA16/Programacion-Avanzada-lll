@@ -7,8 +7,6 @@ export class HabitacionController{
 
     buscarTodas=(request,response)=>{
         try {
-            
-
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitaciones suministradas con exito',

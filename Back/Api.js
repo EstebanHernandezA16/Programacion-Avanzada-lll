@@ -1,11 +1,12 @@
 import express from 'express'
 import { rutasAPI } from './src/routes/Hoteles.routes.js'
 //Programacion Orientada a Objetos
-
+import { conectarBD } from './src/database/conexion.js'
 export class Api{
 
     constructor(){
         this.app = express()
+        this.conectarBD()
         this.enrutarPeticiones()
     }
 
@@ -18,6 +19,10 @@ export class Api{
         this.app.use('/', rutasAPI)
         this.app.use(express.json())
 
+    }
+
+    conectarBD(){
+        conectarBD()
     }
 
 }
