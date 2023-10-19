@@ -1,5 +1,6 @@
 import express from 'express'
-import { rutasAPI } from './src/routes/Hoteles.routes.js'
+import { rutasHoteles } from './src/routes/Hoteles.routes.js'
+import { enrutador } from './src/routes/routes.js'
 //Programacion Orientada a Objetos
 import { conectarBD } from './src/database/conexion.js'
 export class Api{
@@ -16,7 +17,9 @@ export class Api{
     }
 
     enrutarPeticiones = () =>{
-        this.app.use('/', rutasAPI)
+        //pasar this.app a routes.js
+        enrutador(this.app)
+        // this.app.use('/habitaciones' || '/habitacion', rutasHoteles)
         this.app.use(express.json())
 
     }

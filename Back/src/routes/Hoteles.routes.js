@@ -1,11 +1,11 @@
 import express from 'express'
 import { HabitacionController } from '../controllers/HabitacionController.js';
 
-export const rutasAPI = express.Router();
+export const rutasHoteles = express.Router();
 
 const controlador = new HabitacionController()
 
-rutasAPI
+rutasHoteles
 
 
   .get('/habitaciones', controlador.buscarTodas)
