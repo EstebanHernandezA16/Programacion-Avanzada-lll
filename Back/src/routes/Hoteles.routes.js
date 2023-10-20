@@ -8,12 +8,12 @@ const controlador = new HabitacionController()
 rutasHoteles
 
 
-  .get('/habitaciones', controlador.buscarTodas)
+  .get('/', controlador.buscarTodas)
 
-  .post('/habitaciones', controlador.registrar)
+  .post('/', controlador.registrar)
 
-  .get('/habitacion/:id', controlador.buscarById)
+  .get('/:id', controlador.buscarById)
 
-  .put('/habitaciones/:id', controlador.editar)
+  .put('/:id', controlador.editar)
 
-  .delete('/habitaciones/:id', controlador.eliminar)
+  .delete('/:id', controlador.eliminar)

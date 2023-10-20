@@ -1,6 +1,7 @@
 import express from 'express'
-import { HabitacionController } from '../controllers/HabitacionController.js';
-// import { rutasHoteles } from './Hoteles.routes';
+import { rutasHoteles } from './Hoteles.routes.js';
+import { rutasReservas } from './Reservas.routes.js';
+
 
 // const controlador = new HabitacionController()
 
@@ -8,9 +9,10 @@ import { HabitacionController } from '../controllers/HabitacionController.js';
 export const enrutador = (app) =>{
     //aqui puedo hacer un log de app a ver si puedo traer el endpoint
     const router = express.Router();
-
-    app.use('/', () => console.log(app))
-
+    app.use('/',router)
+   
+    router.use('/habitaciones', rutasHoteles)
+    router.use('/reservas', rutasReservas)
     
 
 
