@@ -1,0 +1,11 @@
+Garantizar los siguientes items
+1. Eliminar Datos
+2. Respuestas Correctas
+3. En registrar solamente (tomar 2 fechas del objeto datos y calcular la diferencia de dias de esas dos fechas (Fecha out y Fecha in))
+
+
+
+//Entregar
+
+1.Certificado de platzi // esa es la nota de conocimiento
+

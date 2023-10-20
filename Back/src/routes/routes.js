@@ -10,12 +10,9 @@ export const enrutador = (app) =>{
     //aqui puedo hacer un log de app a ver si puedo traer el endpoint
     const router = express.Router();
     app.use('/',router)
-   
     router.use('/habitaciones', rutasHoteles)
     router.use('/reservas', rutasReservas)
     
-
-
 }
 
 

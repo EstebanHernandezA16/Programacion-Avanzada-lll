@@ -1,11 +1,9 @@
-
+import { ServicioReservas } from "../services/Servicio.reservas.js"
 
 export class ReservasController{
-    constructor(){
+    constructor(){}
 
-    }
-
-    buscarTodas=(request,response)=>{
+    buscarTodas= async(request,response)=>{
         try {
             response.status(200).json({
                 correcto:true,
@@ -22,7 +20,7 @@ export class ReservasController{
         }
     }
 
-    buscarById=(request,response)=>{
+    buscarById= async(request,response)=>{
         try {
             const id = request.params.id
             
@@ -48,7 +46,7 @@ export class ReservasController{
 
     }
 
-    editar=(request,response)=>{
+    editar=async(request,response)=>{
         try {
             const id = request.params.id
             const data = request.body
@@ -70,7 +68,8 @@ export class ReservasController{
 
     }
 
-    registrar=(request,response)=>{
+    registrar=async(request,response)=>{
+          
         try {
             
             const datosRegistrar = request.body
@@ -92,7 +91,7 @@ export class ReservasController{
 
     }
 
-    eliminar=(request,response)=>{
+    eliminar= async(request,response)=>{
 
         try {
             const id = request.params.id

@@ -1,3 +1,5 @@
+import { ServicioHabitacion } from "../services/Servicio.habitacion.js"
+import { dateParser } from "../utils/dateParser.js"
 
 export class HabitacionController{
 
@@ -5,12 +7,14 @@ export class HabitacionController{
 
     }
 
-    buscarTodas=(request,response)=>{
+    buscarTodas=async(request,response)=>{
         try {
+            let servicioHabitacion = new ServicioHabitacion()
+            
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitaciones suministradas con exito',
-                datos:'info'
+                datos: await servicioHabitacion.buscarTodas()
             })
         } catch (error) {
             response.status(400).json({
@@ -22,16 +26,15 @@ export class HabitacionController{
         }
     }
 
-    buscarById=(request,response)=>{
+    buscarById=async(request,response)=>{
         try {
+            let servicioHabitacion = new ServicioHabitacion()
             const id = request.params.id
-            
-
 
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitacion suministrada con exito',
-                datos:'info'
+                datos: await servicioHabitacion.buscarById(id)
             })
 
         } catch (error) {
@@ -48,15 +51,16 @@ export class HabitacionController{
 
     }
 
-    editar=(request,response)=>{
+    editar=async(request,response)=>{
         try {
+            let servicioHabitacion = new ServicioHabitacion()
             const id = request.params.id
             const data = request.body
-
+            const result =   await servicioHabitacion.editar(id,data)
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitacion editada con exito',
-                datos:null
+                datos:await result.json()
             })
 
         } catch (error) {
@@ -70,11 +74,14 @@ export class HabitacionController{
 
     }
 
-    registrar=(request,response)=>{
+    registrar=async(request,response)=>{
         try {
-            
+            let servicioHabitacion = new ServicioHabitacion()
             const datosRegistrar = request.body
-
+            // console.log(request.body);
+            //implementar diferencias de fechas aqui
+            dateParser()
+            // await servicioHabitacion.registrar(datosRegistrar)
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitacion registrada con exito',
@@ -92,11 +99,12 @@ export class HabitacionController{
 
     }
 
-    eliminar=(request,response)=>{
+    eliminar=async(request,response)=>{
 
         try {
+            let servicioHabitacion = new ServicioHabitacion()
             const id = request.params.id
-
+            await servicioHabitacion.eliminar(id)
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitacion eliminada con exito',

@@ -18,9 +18,10 @@ export class Api{
 
     enrutarPeticiones = () =>{
         //pasar this.app a routes.js
+        this.app.use(express.json())
         enrutador(this.app)
         // this.app.use('/habitaciones' || '/habitacion', rutasHoteles)
-        this.app.use(express.json())
+       
 
     }
 
