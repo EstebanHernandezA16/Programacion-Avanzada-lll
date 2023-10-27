@@ -3,7 +3,6 @@ import { modeloHabitacion } from "../models/modelo.habitacion.js"
 export class ServicioHabitacion{
 
     constructor(){
-
     }
 
     buscarTodas =async() =>  await modeloHabitacion.find()

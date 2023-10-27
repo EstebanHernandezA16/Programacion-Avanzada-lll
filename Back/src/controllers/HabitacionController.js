@@ -78,10 +78,11 @@ export class HabitacionController{
         try {
             let servicioHabitacion = new ServicioHabitacion()
             const datosRegistrar = request.body
-            // console.log(request.body);
-            //implementar diferencias de fechas aqui
-            dateParser()
+
+            // dateParser(datosRegistrar.fechaIni, datosRegistrar.fechaFin)
+            // console.log(`La diferencia de dias es de ${dateParser(datosRegistrar.fechaIni, datosRegistrar.fechaFin)}`);
             // await servicioHabitacion.registrar(datosRegistrar)
+            
             response.status(200).json({
                 correcto:true,
                 mensaje:'Habitacion registrada con exito',
