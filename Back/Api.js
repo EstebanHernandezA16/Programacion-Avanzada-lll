@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { rutasHoteles } from './src/routes/Hoteles.routes.js'
 import { enrutador } from './src/routes/routes.js'
 //Programacion Orientada a Objetos
@@ -18,6 +19,7 @@ export class Api{
 
     enrutarPeticiones = () =>{
         //pasar this.app a routes.js
+        this.app.use(cors())
         this.app.use(express.json())
         enrutador(this.app)
         // this.app.use('/habitaciones' || '/habitacion', rutasHoteles)

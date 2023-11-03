@@ -1,0 +1,7 @@
+Deploy en vercel
+
+*en el .env escribir PORT=3001
+*en el package.json hacer un script que corra el back 
+*instalar cors con npm
+*implementar cors en el api
+*guardar en el api
